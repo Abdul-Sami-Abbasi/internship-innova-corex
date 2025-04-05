@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingoFlip - Language Flashcards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌍 LingoFlip</h1>
+        <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+    </header>
+
+    <div class="controls">
+        <select id="language-select">
+            <option value="english">🇬🇧 English</option>
+            <option value="turkish">🇹🇷 Turkish</option>
+            <option value="german">🇩🇪 German</option>
+        </select>
+        <button id="shuffle"><i class="fas fa-random"></i> Shuffle</button>
+        <button id="reset"><i class="fas fa-redo"></i> Reset</button>
+    </div>
+
+    <div class="flashcard-container">
+        <div class="flashcard" id="flashcard">
+            <div class="flashcard-face front" id="word">Word</div>
+            <div class="flashcard-face back" id="translation">Translation</div>
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <div class="controls">
+        <button id="prev"><i class="fas fa-chevron-left"></i> Previous</button>
+        <button id="flip"><i class="fas fa-sync"></i> Flip</button>
+        <button id="next">Next <i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <div class="custom-word">
+        <h3>➕ Add Custom Word</h3>
+        <input type="text" id="custom-word" placeholder="Enter word">
+        <input type="text" id="custom-translation" placeholder="Enter translation">
+        <button id="add-word" style="margin-top: 1rem;"><i class="fas fa-plus"></i> Add Word</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

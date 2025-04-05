@@ -1,0 +1,163 @@
+ /* CSS */
+ :root {
+    --transition-duration: 0.4s;
+    --card-width: 320px;
+    --card-height: 200px;
+    --primary-color: #4CAF50;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    transition: background 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.dark-mode {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%) !important;
+    color: #fff;
+}
+
+header {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 1rem auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    backdrop-filter: blur(8px);
+}
+
+select, button {
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.flashcard-container {
+    perspective: 2000px;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.flashcard {
+    width: var(--card-width);
+    height: var(--card-height);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.flashcard-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    padding: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.front {
+    transform: rotateY(0deg);
+    background: white;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Language Themes */
+.language-english .front { background: #012169; color: white; }
+.language-english .back { background: #C8102E; color: white; }
+.language-turkish .front { background: #E30A17; color: white; }
+.language-turkish .back { background: white; color: #E30A17; }
+.language-german .front { background: #000; color: #FFD700; }
+.language-german .back { background: #DD0000; color: #FFCC00; }
+
+.progress-container {
+    width: var(--card-width);
+    height: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin: 1rem auto;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.custom-word {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    max-width: 400px;
+    backdrop-filter: blur(8px);
+}
+
+input[type="text"] {
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    margin: 0.5rem 0;
+    transition: border-color 0.3s ease;
+}
+
+@media (max-width: 480px) {
+    :root {
+        --card-width: 280px;
+        --card-height: 180px;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
