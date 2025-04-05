@@ -12,7 +12,6 @@ Language learning flashcards with 3D animations (HTML/CSS/JS)
 
 ## First Project: LingoFlip
 🚀 **Live Demo**: [Try it Now](https://abdul-sami-abbasi.github.io/internship-innova-corex/project-01-lingoflip/)  
-![Demo Preview](https://via.placeholder.com/600x400.png?text=Demo+GIF+Coming+Soon)
 
 ### Features
 - 3D card-flip animations
