@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Smart Image Gallery Builder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Smart Drag & Drop Image Gallery</h1>
+
+    <div id="upload-container">
+      <input
+        type="file"
+        id="image-input"
+        accept="image/png, image/jpeg"
+        multiple
+      />
+    </div>
+
+    <div class="gallery" id="gallery"></div>
+
+    <div class="lightbox" id="lightbox">
+      <button class="close" onclick="closeLightbox()">✖</button>
+      <button class="nav prev" onclick="navigateLightbox(-1)">←</button>
+      <img id="lightbox-img" src="" alt="Preview" />
+      <button class="nav next" onclick="navigateLightbox(1)">→</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
